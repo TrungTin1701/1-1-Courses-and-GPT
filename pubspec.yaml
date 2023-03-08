@@ -30,7 +30,11 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-
+  #cupertino_icons: ^1.0.2
+  flutter_svg: ^0.22.0
+  cached_network_image: ^3.1.0
+  badges: ^3.0.2
+  carousel_slider: ^4.0.0
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
@@ -62,7 +66,10 @@ flutter:
   # assets:
   #   - images/a_dot_burr.jpeg
   #   - images/a_dot_ham.jpeg
-
+  assets:
+    - assets/icons/
+    - assets/icons/category/
+    - assets/images/
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
 
