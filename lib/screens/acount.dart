@@ -1,3 +1,5 @@
+// ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors, avoid_unnecessary_containers
+
 import 'package:flutter/material.dart';
 
 
@@ -11,6 +13,7 @@ class AccountPage extends StatefulWidget {
   const AccountPage({ Key? key }) : super(key: key);
 
   @override
+  // ignore: library_private_types_in_public_api
   _AccountPageState createState() => _AccountPageState();
 }
 
@@ -36,15 +39,13 @@ class _AccountPageState extends State<AccountPage> {
 
   getHeader(){
     return
-      Container(
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            Text("Account",
-              style: TextStyle(color: textColor, fontSize: 24, fontWeight: FontWeight.w600),
-            ),
-          ],
-        ),
+      Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          Text("Account",
+            style: TextStyle(color: textColor, fontSize: 24, fontWeight: FontWeight.w600),
+          ),
+        ],
       );
   }
 

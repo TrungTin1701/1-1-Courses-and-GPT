@@ -1,6 +1,9 @@
 
+// ignore_for_file: library_private_types_in_public_api, avoid_unnecessary_containers, prefer_const_constructors, avoid_print, prefer_const_literals_to_create_immutables, unnecessary_brace_in_string_interps
+
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
+import 'package:oneonecourse_app/screens/Teachers/list_teachers.dart';
 import 'package:oneonecourse_app/theme/color.dart';
 import 'package:oneonecourse_app/utils/data.dart';
 import 'package:oneonecourse_app/widgets/category_box.dart';
@@ -95,6 +98,18 @@ class _HomePageState extends State<HomePage> {
                   ),
                 ),
                 getRecommend(),
+                SizedBox(height: 15,),
+                 Container(
+                  margin: EdgeInsets.fromLTRB(15, 0, 15, 10),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text("Teachers", style: TextStyle(fontSize: 22, fontWeight: FontWeight.w600, color: textColor),),
+                      Text("See all", style: TextStyle(fontSize: 14, color: darker),),
+                    ],
+                  ),
+                ),
+                ListTeach(),
               ]
           ),
         ),
@@ -136,6 +151,15 @@ class _HomePageState extends State<HomePage> {
           enlargeCenterPage: true,
           disableCenter: true,
           viewportFraction: .75,
+          initialPage: 0,
+          enableInfiniteScroll: false,
+          reverse: false,
+          autoPlay: true,
+          autoPlayInterval: Duration(seconds: 3),
+          autoPlayAnimationDuration: Duration(milliseconds: 800),
+          autoPlayCurve: Curves.fastOutSlowIn,
+          scrollDirection: Axis.horizontal,
+
         ),
         items: List.generate(features.length, 
           (index) => FeatureItem(
